@@ -86,6 +86,7 @@ var app = new Vue({
 					setTimeout(() => this.show=false, 2500);
 				}
 			}
+			this.setPage(1);
 		},
 		changeItem(x) {
 			this.doChange = true;
@@ -102,6 +103,7 @@ var app = new Vue({
 			var deletIndex = this.items.indexOf(x);
 			this.items.splice(deletIndex, 1);
 			this.saveItems();
+			this.setPage(1);
 		},
 		setPage: function (p) {
 			this.pagination = this.paginator(this.items.length, p);
